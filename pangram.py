@@ -16,6 +16,14 @@ def is_pangram(sentence):
     # convert cleaned up sentence into set (thus removing duplicates)
     # see if set is 26 char (e.g. contains at least 1 of each letter in alphabet)
 
+    letters = set()
+
+    for char in sentence:
+        if char.isalpha():
+            letters.add(char.lower())
+
+    return len(letters) == 26
+
 
 if __name__ == "__main__":
     import doctest
